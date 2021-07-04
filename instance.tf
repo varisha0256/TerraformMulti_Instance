@@ -15,8 +15,8 @@ resource "aws_instance" "EC2_with_TF" {
   subnet_id                   = each.value
   vpc_security_group_ids      = [aws_security_group.TF_SG.id]
   associate_public_ip_address = true
-  
-    tags = {
+
+  tags = {
     Name = "AnsiSlave-${each.value}"
   }
 }
